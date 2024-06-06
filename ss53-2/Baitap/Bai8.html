@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script> 
+        let arr = [1, 4, 6, 8, 10];
+        function myFind(arr, value, callback) {
+            for (let i = 0; i < arr.length; i++) {
+                if (callback(arr[i], i, arr)) {
+                    return [arr[i], arr];
+                }else{
+                    console.log(null);
+                }
+            }
+            return null;
+        }
+
+     
+
+      let result = myFind(arr, 15, (item) => item > 5);
+      console.log(result); 
+      //      let arr=[1,4,6,8,10]
+      //    function myFind(a,callback){
+
+      //         for(let i=0; i<arr.length; i++){
+      //             if(a=arr[i]){
+      //             //    callback(i)
+      //                console.log(a);
+
+      //             }else{
+      //                 // callback(null)
+      //                 console.log(null);
+      //             }
+      //         }
+      //     }
+      //    myFind(1,)
+    </script>
+  </body>
+</html>

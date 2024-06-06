@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr=[1,2,3,4,5]
+        function processArray(a,callback){
+            let result=[];
+            for (const item of a) {
+                // setTimeout((item)=>{
+                 
+
+                // },2000)
+                console.log("Phần tử thứ: ",item);
+                result.push(callback(item))
+            }
+            return result;
+        }
+       
+        console.log(processArray(arr,(item)=>`phần tử thứ ${item}` ));
+    </script>
+</body>
+</html>

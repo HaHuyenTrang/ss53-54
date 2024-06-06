@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        Promise: sinh ra giải quyết các tác vụ bất đồng bộ
+        giúp việc giải quyết bất đồng bộ mà bị callback-hell (dùng callback)
+        code nhìn gọn gàng, dễ chỉnh sửa, bảo trì hơn 
+        Promise sinh ra ở phiên bản ES6-2015
+        1.cú pháp
+        let promise= new Promise()
+        khởi tạo prm từ obj contructor
+        đối số new prm nhận vào 2 tham số
+        1. resolve: giải quyết-thành công
+        2. reject: từ chối-thất bại
+     -->
+     <script>
+        let promise = new Promise((resolve,reject)=>{
+            // viết logic xử lí code
+            // nếu logic thành công resolve nhảy vào .then
+            // nếu logic thất bại reject nhảy vào .catch
+
+        })
+        promise
+        .then(()=>{
+            console.log("khi thành công trả về dữ liệu ");
+        })
+        .catch(()=>{
+            console.log("khi thất bại báo lỗi!");
+        })
+        let newPromise= new Promise((resolve, reject)=>{
+            setTimeout(()=>{
+                resolve()
+            },1000)
+        })
+        newPromise
+        .then(data=>console.log(1111))
+        .then()
+        .then((data1)=>{
+            return new Promise((resolve,reject)=>{
+                setTimeout(() => {
+                    console.log(222);
+                    resolve();
+                }, 1000);
+            })
+        })
+        .then(()=>{
+            return new Promise((resolve,reject)=>{
+                setTimeout(() => {
+                    console.log(333);
+                    resolve();
+                }, 1000);
+            })
+        })
+     </script>
+</body>
+</html>

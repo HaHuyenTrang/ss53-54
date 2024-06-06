@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let count = 9;
+        function checkCondition(a,callback){
+            callback(a)
+        }
+        function display(a){
+            setTimeout(()=>{
+                 console.log(a);
+            },2000)
+           
+        }
+        checkCondition(count<1,display)
+        
+    </script>
+</body>
+</html>

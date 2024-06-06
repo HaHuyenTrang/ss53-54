@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let number = [1, 3, 5, 7, 9];
+
+      function myFindIndex(num, value, callback) {
+        // let result = [];
+        for (let i = 0; i < num.length; i++) {
+          if (callback(num[i], i, num)) {
+            // result.push(num[i]);
+            return num[i];
+          }
+        }
+        return -1;
+      }
+
+      let filtered = myFindIndex(number, 3, (item) => item < 7);
+      console.log(filtered);
+    </script>
+  </body>
+</html>

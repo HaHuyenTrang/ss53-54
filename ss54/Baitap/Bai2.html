@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function divideNumbers(a, b) {
+        try {
+          if (b === 0) {
+            throw new Error("Không thể chia cho 0");
+          }
+          const result = a / b;
+          console.log(`${a} chia ${b} = ${result}`);
+        } catch (error) {
+          console.error(`Lỗi: ${error.message}`);
+        } finally {
+          console.log("Kết thúc hàm divideNumbers().");
+        }
+      } 
+      divideNumbers(10, 0);
+    </script>
+  </body>
+</html>
